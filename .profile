@@ -8,3 +8,5 @@ export TERMINAL=/usr/bin/alacritty
 setxkbmap -option ctrl:nocaps
 
 xgamma -quiet -rgamma 0.50 -ggamma 0.50 -bgamma 0.25
+
+xrandr --output DP1 --mode 1920x1080
