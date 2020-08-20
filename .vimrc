@@ -13,7 +13,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
-Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -25,6 +24,10 @@ set expandtab " use spaces instead of tabs
 set listchars=tab:▸\ ,eol:¬ " TextMate-style special chars
 
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4
+
+autocmd FileType markdown setlocal wrap linebreak spell spelllang=en_us
+autocmd FileType markdown nnoremap j gj
+autocmd FileType markdown nnoremap k gk
 
 set number " line numbers
 set hidden
@@ -40,13 +43,14 @@ set backspace=indent,eol,start
 " keep tmp files in a safe place
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupcopy=yes
 
 let mapleader = ","
 map <leader>d :NERDTreeToggle<CR>
 map <leader>D :NERDTreeFind<CR>
 map <leader>b :Buffers<CR>
-map <leader>f :GFiles<CR>
 map <leader>t :GFiles<CR>
+map <leader>T :Files<CR>
 
 " disable arrow keys
 nmap <up> <nop>
@@ -73,7 +77,3 @@ let g:ale_sign_error = '•'
 let g:ale_sign_warning = '•'
 let g:ale_open_list = 1
 let g:ale_list_window_size = 5
-let g:ale_linters = {'markdown': ['markdownlint']}
-
-" let g:NERDTreeDirArrowExpandable = '+'
-" let g:NERDTreeDirArrowCollapsible = '~'
