@@ -13,6 +13,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -72,6 +73,7 @@ let g:ale_sign_error = '•'
 let g:ale_sign_warning = '•'
 let g:ale_open_list = 1
 let g:ale_list_window_size = 5
+let g:ale_linters = {'markdown': ['markdownlint']}
 
 " let g:NERDTreeDirArrowExpandable = '+'
 " let g:NERDTreeDirArrowCollapsible = '~'
